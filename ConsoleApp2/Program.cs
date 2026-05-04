@@ -16,9 +16,6 @@ namespace GalaxiesDebugDemo
     }
     class Program
     {
-        /// <summary>
-        /// Точка входа в приложение
-        /// </summary>
         static void Main(string[] args)
         {
             Console.WriteLine("Каталог галактик\n");
@@ -35,7 +32,18 @@ namespace GalaxiesDebugDemo
             Console.WriteLine("\nНажмите любую клавишу...");
             Console.ReadKey();
         }
+        static List<Galaxy> CreateGalaxyList()
+        {
+            return new List<Galaxy>
+            {
+                new Galaxy { Name = "Млечный Путь", Type = "Спиральная", DistanceLightYears = 0 },
+                new Galaxy { Name = "Андромеда", Type = "Спиральная", DistanceLightYears = 2537000 },
+                null, // Потенциальная проблема - null элемент
+                new Galaxy { Name = "Галактика Водоворот", Type = "Спиральная", DistanceLightYears = 23000000 },
+                new Galaxy { Name = "Sombrero", Type = "Спиральная", DistanceLightYears = 29000000 },
+                null  // Ещё один null элемент
+            };
+        }
 
-       
     }
 }
