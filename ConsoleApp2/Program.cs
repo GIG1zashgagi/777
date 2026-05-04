@@ -50,7 +50,23 @@ namespace LettersDebugDemo
 
             return count;
         }
+        static void AnalyzeText(string text)
+        {
+            Console.WriteLine("\n\nДетальный анализ каждого символа:");
+            Console.WriteLine(new string('=', 60));
+            Console.WriteLine($"{"Индекс",-8} {"Символ",-12} {"Тип",-20} {"Гласная",-10}");
+            Console.WriteLine(new string('=', 60));
 
-      
+            for (int i = 0; i < text.Length; i++)
+            {
+                char c = text[i];
+                string type = char.IsLetter(c) ? "Буква" : (char.IsDigit(c) ? "Цифра" : "Знак");
+                string isVowel = IsVowel(c) ? "Да" : "Нет";
+
+                Console.WriteLine($"{i,-8} '{c}',-12 {type,-20} {isVowel,-10}");
+            }
+
+            Console.WriteLine(new string('=', 60));
+        }
     }
 }
