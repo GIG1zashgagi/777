@@ -68,5 +68,11 @@ namespace LettersDebugDemo
 
             Console.WriteLine(new string('=', 60));
         }
+        static bool IsVowel(char c)
+        {
+            char lower = char.ToLower(c);
+            return lower == 'a' || lower == 'e' || lower == 'i' ||
+                   lower == 'o' || lower == 'u';
+        }
     }
 }
