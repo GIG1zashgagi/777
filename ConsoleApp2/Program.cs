@@ -27,6 +27,30 @@ namespace LettersDebugDemo
             Console.WriteLine("\nНажмите любую клавишу...");
             Console.ReadKey();
         }
+        
+        static int CountVowelsFixed(string text)
+        {
+            if (string.IsNullOrEmpty(text)) return 0;
 
+            int count = 0;
+
+            foreach (char c in text)
+            {
+                char lowerChar = char.ToLower(c);
+
+                if (char.IsLetter(c))
+                {
+                    if (lowerChar == 'a' || lowerChar == 'e' || lowerChar == 'i' ||
+                        lowerChar == 'o' || lowerChar == 'u')
+                    {
+                        count++;
+                    }
+                }
+            }
+
+            return count;
+        }
+
+      
     }
 }
