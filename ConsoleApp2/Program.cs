@@ -2,5 +2,8 @@
 
 namespace FibonacciDebugDemo
 {
+    class Program
+    {
 
+    }
 }
